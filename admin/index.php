@@ -63,8 +63,8 @@ $FLAG_FIRST_LEFTNAV = 'index';
 
                 </style>
 
-                <div class="page_body" style="background:none;">
-                    <img src="images/1.jpg" width="100%" height="30%">
+                <div class="page_body" style="background:none;" align="center">
+                    <img src="images/school.jpg" width="75%">
                 </div>
 
             </div>
