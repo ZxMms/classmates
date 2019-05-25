@@ -221,7 +221,7 @@ $people_info=People::getInfoById($id);
                                         <img src="<?php echo "../".$people_info['img']?>" alt="" class="up-img">
                                         <input style="position: absolute;top: 0;width: 350px;height: 220px;opacity: 0;" type="file" multiple=""
                                                id="file" name="file" class="add_email_file" >
-                                        <input type="hidden" id="file_url">
+                                        <input type="hidden" id="file_url" value="admin/static/default.png">
                                     </div>
 
                                 </div>

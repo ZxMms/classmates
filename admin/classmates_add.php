@@ -207,10 +207,10 @@ $FLAG_SECOND_LEFTNAV = 'classmates_list';
 
                                 <div class="up-file" align="right">
                                     <div class="img-file">
-                                        <img src="static/img/1.jpg" alt="" class="up-img">
+                                        <img src="static/default.png" alt="" class="up-img">
                                         <input style="position: absolute;top: 0;width: 350px;height: 220px;opacity: 0;" type="file" multiple=""
                                                id="file" name="file" class="add_email_file" >
-                                        <input type="hidden" id="file_url">
+                                        <input type="hidden" id="file_url" value="admin/static/default.png">
                                     </div>
 
                                 </div>
