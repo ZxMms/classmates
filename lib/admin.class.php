@@ -38,7 +38,7 @@ class Admin {
      * @return
      */
     public function login($account, $password, $cookie = 0){
-        
+
 		if(empty($account))throw new MyException('账号不能为空', 101);
 		if(empty($password))throw new MyException('密码不能为空', 102);
 
@@ -56,16 +56,16 @@ class Admin {
 			$this->id         = $admininfo['id'];
 			$this->account    = $admininfo['account'];
 			$this->gid        = $admininfo['group'];
-			
+
 			//设置cookie;
 			if($cookie) $this->buildCookie();
 
 			//设置session
 			self::setSession(1, $this->id);
-			
+
 			//记录登陆信息
 			$this->updateLoginInfo();
-            
+
 			//记录管理员日志log表
             $log = '成功登录!';
             Adminlog::add($log);
@@ -210,12 +210,23 @@ class Admin {
 	 * 
 	 * @return
 	 */
-	static public function getList($group = 0){
+	static public function getList($group = 0,$keyword,$pages){
 
 		//$startrow = ($page - 1) * $pagesize;
 
-		return Table_admin::getList($group);
+		return Table_admin::getList($group,$keyword,$pages);
 	}
+
+    /**
+     * @param int $group
+     * @return array
+     */
+    static public function getCount($group = 0,$keyword){
+
+        //$startrow = ($page - 1) * $pagesize;
+
+        return Table_admin::getCount($group,$keyword);
+    }
 
 	/**
 	 * Admin::addAdmin() 添加管理员
@@ -239,8 +250,7 @@ class Admin {
 		if($admin) throw new MyException('账号已经存在', 104);
 
 		//检查管理员组是否存在
-		$admingroup = Table_admingroup::getInfoById($group);
-		if(!$admingroup) throw new MyException('管理员组不存在', 105);
+
 
         //生成管理员密码
         $password = self::buildPassword($password);

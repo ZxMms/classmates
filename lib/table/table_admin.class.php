@@ -119,7 +119,7 @@ class Table_admin extends Table {
         //参数
     	$param = array (
     		'admin_account'   => array('string', $account),
-    		'admin_group'     => array('number', $group)
+    		'admin_group'     => array('number', $group),
     	);
         $where = array('admin_id'=> array('number', $id));
             
@@ -175,17 +175,27 @@ class Table_admin extends Table {
      * 
      * @return
      */
-    static public function getList($group = 0){
+    static public function getList($group = 0,$keyword,$pages){
         
         global $mypdo;
         $group   = $mypdo->sql_check_input(array('number', $group));
         
         $sql = "select * from ".$mypdo->prefix."admin";
+        $sql.=" where 1=1";
         if($group){
 			$sql .= ' and admin_group = '.$group;
 		}
+        if($keyword){
+            $sql .= ' and admin_account like "%'.$keyword.'%"';
+        }
+        $limit = "";
+        if(!empty($pages["page"]))
+        {
+            $start = ($pages["page"]-1)*$pages["pageSize"];
+            $limit = " limit {$start},{$pages["pageSize"]}";
+        }
+        $sql .= $limit;
 
-        $sql .=" order by admin_id desc";
         $rs = $mypdo->sqlQuery($sql);
         $r = array();
         if($rs){
@@ -224,5 +234,33 @@ class Table_admin extends Table {
         return $r;
     }
 
+    /**
+     *
+     *得到总数
+     */
+    static public function getCount($group = 0,$keyword){
+
+        global $mypdo;
+        $group   = $mypdo->sql_check_input(array('number', $group));
+
+        $sql = "select count(1) from ".$mypdo->prefix."admin";
+
+        $sql.=" where 1=1";
+        if($group){
+            $sql .= ' and admin_group = '.$group;
+        }
+        if($keyword){
+            $sql .= ' and admin_account like "%'.$keyword.'%"';
+        }
+
+
+        $sql .=" order by admin_id desc";
+        $rs = $mypdo->sqlQuery($sql);
+        if($rs){
+            return $rs[0][0];
+        }else{
+            return null;
+        }
+    }
 }
 ?>

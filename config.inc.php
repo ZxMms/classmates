@@ -25,21 +25,22 @@ $FILE_PATH = str_replace('\\','/',dirname(__FILE__)).'/'; //网站根目录路�
 $LIB_PATH        = $FILE_PATH.'lib/';
 $LIB_COMMON_PATH = $LIB_PATH.'common/';
 $LIB_TABLE_PATH  = $LIB_PATH.'table/';
-$HTTP_PATH = 'http://localhost/git/zhimaphp/';              //网站访问路径，根据实际情况修改
+$HTTP_PATH = 'http://47.100.224.190/classmates/';              //网站访问路径，根据实际情况修改
+$HTTP_PATH_2 = 'http://47.100.224.190/classmates/';              //网站访问路径，根据实际情况修改
 
 //数据库连接参数设置=======================================
 $DB_host   = 'localhost';                                 //数据库地址
 $DB_user   = 'root';                                      //数据库用户
 $DB_pass   = 'root';                                      //数据库用户密码
-$DB_name   = 'zhimaphp2017';                                     //数据库名称
-$DB_prefix = 'zhimaphp_';                                    //表前缀，可以为空
+$DB_name   = 'classmate';                                     //数据库名称
+$DB_prefix = 'classmates_';                                    //表前缀，可以为空
 
 //日志文件路径==============================================
 //请给以下日志文件设置写权限
 $LOG_PATH   = $FILE_PATH.'logs/';
 $LOG_config = array(
-	'common'      => $LOG_PATH.'common.log',
-	'debug'       => $LOG_PATH.'debug.log'
+    'common'      => $LOG_PATH.'common.log',
+    'debug'       => $LOG_PATH.'debug.log'
 );
 
 //管理员Cookie 和 Session===================================

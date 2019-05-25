@@ -124,6 +124,7 @@ class MyPdo {
 		$params_str = implode(',', $params);
 		$sql .= $params_str.')';
 
+
 		try {
 			$this->pdo->exec($sql);
 			return $this->getLastId();

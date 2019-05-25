@@ -64,95 +64,404 @@ function getPage($pagecount){
  * @param $pagecount 总页数
  * @return
  */
-function dspPages($url, $page, $pagesize, $rscount, $pagecount){
-		
-		//参数安全处理
-		$url  = str_replace(array(">", "<"), array("&gt;", "&lt;"), $url);
-		if(!is_numeric($page))       $page = 0;
-		if(!is_numeric($pagesize))   $pagesize = 0;
-		if(!is_numeric($rscount))    $rscount = 0;
-		if(!is_numeric($pagecount))  $pagecount = 0;
-		
-		//处理Page参数
-		$p1 = strpos($url, '?page=');
-        if($p1) $url = substr($url, 0, $p1);
-        
-        $p2 = strpos($url, '&page=');
-        if($p2) $url = substr($url, 0, $p2);
-		
-		//构建显示
-		$temppage="";
-		$temppage.="<div class=\"pagenum\">";
+function getUrlExcludePage($url)
+{
+    $parsed_url = parse_url($url);
+    if(!array_key_exists("query", $parsed_url)){
+        return $url;
+    }
 
-		if($page>1){
-			$temppage.="<div class=\"page_prev\"><a href=\"".$url."?page=".($page-1)."\">上一页</a></div>";
-		}else{
-			$temppage.="<div class=\"page_prev\">上一页</div>";
-		}
-		
-		If($pagecount<9){
-			for($p=1;$p<=$pagecount;$p++){
-				if($p!=$page)
-					$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-				else
-					$temppage.=" <div class=\"pager active\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-			}
-		}else{
-			if($page<=3){
-				for($p=1;$p<=5;$p++){
-					if($p!=$page)
-						$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-					else
-						$temppage.=" <div class=\"pager active\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-				}
-				$temppage.=" <div class=\"pager\">...</div>";
-				for($p=$pagecount-3;$p<=$pagecount;$p++){
-					if($p!=$page)
-						$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-					else
-						$temppage.=" <div class=\"pager active\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-				}
-			}else if($pagecount-$page<=3){
-				for($p=1;$p<=3;$p++){
-					$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-				}
-				$temppage.="<div class=\"pager\">...</div>";
-				for($p=$pagecount-4;$p<=$pagecount;$p++){
-					if($p!=$page){
-						$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-					}else{
-						$temppage.=" <div class=\"pager active\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-					}
-				}
-			}
-			else{
-				$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=1\">1</a></div>";
-				$temppage.=" <div class=\"pager\">...</div>";
-				for($p=$page-2;$p<=$page+2;$p++){
-					if($p!=$page){
-						$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$p."\">".$p."</a></div>";
-					}else{
-						$temppage.=" <div class=\"pager active\">".$p."</div>";
-					}
-				}
-				$temppage.="<div class=\"pager\">...</div>";
-				$temppage.=" <div class=\"pager\"><a href=\"".$url."?page=".$pagecount."\">".$pagecount."</a></div>";
-			}
-		}
+    parse_str($parsed_url["query"], $query_array);
+    if(array_key_exists("page", $query_array)) {
+        unset($query_array["page"]);
+    }
+    $query_str = http_build_query($query_array);
 
-		if($page<=$pagecount-1){
-			$temppage.="<div class=\"page_prev\"><a href=\"".$url."?page=".($page+1)."\">下一页</a></div>";
-		}else{
-			$temppage.="<div class=\"page_prev\">下一页</div>";
-		}
-		
-		$temppage .="</div>";		
+    if(!empty($query_str))
+    {
+        $return_url = $parsed_url["path"]."?$query_str";
+
+    }
+    else
+    {
+        $return_url = $parsed_url["path"];
+    }
+
+    return $return_url;
+}
+function timediff($timediff){
+
+    $days = intval($timediff/86400);
+    $remain = $timediff%86400;
+    $hours = intval($remain/3600);
+    $remain = $remain%3600;
+    $mins = intval($remain/60);
+    $secs = $remain%60;
+    $res = array("day" => $days,"hour" => $hours,"min" => $mins);
+    return $days."天".$hours."时".$mins."分";
+}
+function dspPage($url, $page, $pagesize, $rscount, $pagecount){
+
+    //参数安全处理
+    $url  = str_replace(array(">", "<"), array("&gt;", "&lt;"), $url);
+    if(!is_numeric($page))       $page = 0;
+    if(!is_numeric($pagesize))   $pagesize = 0;
+    if(!is_numeric($rscount))    $rscount = 0;
+    if(!is_numeric($pagecount))  $pagecount = 0;
+
+    $url = getUrlExcludePage($url);
+    //构建显示
+    $temppage="";
+    $temppage.=" <span class='sign'>|<</span>";
+
+    if($page>1){
+        $temppage.="&nbsp;<a href='".$url."?page=1'>首页</a>&nbsp;&nbsp;";
+        $temppage.="<span class='sign'><</span>&nbsp;<a href='".$url."?page=".($page-1)."'>上一页</a>";
+
+    }else{
+        $temppage.="&nbsp;首页&nbsp;&nbsp;";
+        $temppage.="<span class='sign'><</span>&nbsp;上一页";
+
+    }
 
 
-		if(!strpos($url, "?") === false)
-			$temppage=str_replace("?page=", "&page=", $temppage);
+    if($page<=$pagecount-1){
+        $temppage.="&nbsp;&nbsp;&nbsp;<a href='".$url."?page=".($page+1)."'>下一页</a>&nbsp;<span class='sign'> > </span>";
+        $temppage.="<a href='".$url."?page=".$pagecount."' >尾页</a><span class='sign'> >|</span>";
 
-		return $temppage;
+    }else{
+        $temppage.="&nbsp;&nbsp;&nbsp;下一页&nbsp;<span class='sign'> > </span>";
+        $temppage.="尾页<span aria-hidden='true'> >|</span>";
+
+    }
+
+
+
+    if(!strpos($url, "?") === false)
+        $temppage=str_replace("?page=", "&page=", $temppage);
+
+    return $temppage;
 }
 
+
+function dspPages($url, $page, $pagesize, $rscount, $pagecount){
+
+    //参数安全处理
+    $url  = str_replace(array(">", "<"), array("&gt;", "&lt;"), $url);
+    if(!is_numeric($page))       $page = 0;
+    if(!is_numeric($pagesize))   $pagesize = 0;
+    if(!is_numeric($rscount))    $rscount = 0;
+    if(!is_numeric($pagecount))  $pagecount = 0;
+
+    $url = getUrlExcludePage($url);
+
+
+    $temppage="";
+    $temppage.="<nav aria-label=\"Page navigation\" class=\"PageBox\"><ul class=\"pagination\">";
+
+    if($page>1){
+        $temppage.="<li><a href=\"".$url."?page=1\" aria-label=\"Previous\"><span aria-hidden=\"true\">首页</span></a></li>";
+    }else{
+        $temppage.="<li><a href=\"#\"><span aria-hidden=\"true\">首页</span></a></li>";
+    }
+
+    If($pagecount<9){
+
+        for($p=1;$p<=$pagecount;$p++){
+            if($p!=$page)
+                $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            else
+                $temppage.=" <li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+        }
+    }else{
+
+        if($page<=3){
+            for($p=1;$p<=5;$p++){
+                if($p!=$page)
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                else
+                    $temppage.="<li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            }
+            $temppage.=" <li><a href='#'>...</a></li>";
+            for($p=$pagecount-3;$p<=$pagecount;$p++){
+                if($p!=$page)
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                else
+                    $temppage.="<li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            }
+        }else if($pagecount-$page<=3){
+
+            for($p=1;$p<=3;$p++){
+                $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            }
+            $temppage.="<li><a href='#'>...</a></li>";
+            for($p=$pagecount-4;$p<=$pagecount;$p++){
+                if($p!=$page){
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                }else{
+                    $temppage.=" <li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                }
+            }
+        }
+        else{
+            $temppage.=" <li><a href=\"".$url."?page=1\">1</a></li>";
+            $temppage.=" <li><a href='#'>...</a></li>";
+            for($p=$page-2;$p<=$page+2;$p++){
+                if($p!=$page){
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                }else{
+                    $temppage.=" <li class=\"active\"><a href=\"#\">".$p."</a></li>";
+
+                }
+            }
+            $temppage.="<li><a href='#'>...</a></li>";
+            $temppage.=" <li><a href=\"".$url."?page=".$pagecount."\">".$pagecount."</a></li>";
+        }
+    }
+
+
+
+    if($page<=$pagecount-1){
+        $temppage.="<li><a href=\"".$url."?page=".$pagecount."\" aria-label=\"Next\">末页</a></li>";
+    }else{
+        $temppage.="<li><a href=\"#\" aria-label=\"Next\">末页</a></li>";
+    }
+
+
+
+
+    if($page<=$pagecount){
+        $temppage.="<span style=\"line-height:32px;font-size:14px;color:#686868;margin-left: 20px;\">跳转到第<input style=\"width:35px;padding:0px 2px;margin:0px 5px;\" type=\"text\"   id=\"page1\"  />页</span>
+                <button class=\"form_btn\" id=\"page\"  >跳转</button> 
+                 <script>
+                $('#page').click(function(){
+                    var page = $('#page1').val();
+                    window.location.href = '{$url}?page='+page;
+                })
+               </script>  
+                ";
+    }else{
+        $temppage.="<a href=\"#\" >末页</a>";
+    }
+
+    $temppage .="</nav></ul>";
+
+
+    $temppage .= "<span class='counting_num'>共{$rscount}条数据</span>";
+
+    if(!strpos($url, "?") === false)
+        $temppage=str_replace("?page=", "&page=", $temppage);
+
+    return $temppage;
+}
+
+
+/**
+ * 民心网前端分页界面
+ * @param $url
+ * @param $page
+ * @param $pagesize
+ * @param $rscount
+ * @param $pagecount
+ * @return string
+ */
+function dspPagesForMin($url, $page, $pagesize, $rscount, $pagecount){
+
+    //参数安全处理
+    $url  = str_replace(array(">", "<"), array("&gt;", "&lt;"), $url);
+    if(!is_numeric($page))       $page = 0;
+    if(!is_numeric($pagesize))   $pagesize = 0;
+    if(!is_numeric($rscount))    $rscount = 0;
+    if(!is_numeric($pagecount))  $pagecount = 0;
+
+    $url = getUrlExcludePage($url);
+
+
+    $temppage="";
+    $temppage.="<div class=\"pagination\">";
+
+    if($page>1){
+        $temppage.="<a href=\"".$url."?page=1\" >首页</span></a>";
+    }else{
+        $temppage.="<a href=\"#\" >首页</span></a>";
+    }
+
+    If($pagecount<9){
+
+        for($p=1;$p<=$pagecount;$p++){
+            if($p!=$page)
+                $temppage.=" <a href=\"".$url."?page=".$p."\">".$p."</a>";
+            else
+                $temppage.=" <a href=\"#\"  class=\"hover\">".$p."</a>";
+        }
+    }else{
+
+        if($page<=3){
+            for($p=1;$p<=5;$p++){
+                if($p!=$page)
+                    $temppage.=" <a href=\"".$url."?page=".$p."\">".$p."</a>";
+                else
+                    $temppage.="<a href=\"#\" class=\"hover\">".$p."</a>";
+            }
+            $temppage.=" <span class=\"more\"></span>";
+            for($p=$pagecount-3;$p<=$pagecount;$p++){
+                if($p!=$page)
+                    $temppage.=" <a href=\"".$url."?page=".$p."\">".$p."</a>";
+                else
+                    $temppage.="<a href=\"#\" class=\"hover\">".$p."</a>";
+            }
+        }else if($pagecount-$page<=3){
+
+            for($p=1;$p<=3;$p++){
+                $temppage.=" <a href=\"".$url."?page=".$p."\">".$p."</a>";
+            }
+            $temppage.="<span class=\"more\"></span>";
+            for($p=$pagecount-4;$p<=$pagecount;$p++){
+                if($p!=$page){
+                    $temppage.=" <a href=\"".$url."?page=".$p."\">".$p."</a>";
+                }else{
+                    $temppage.=" <a href=\"#\" class=\"hover\">".$p."</a>";
+                }
+            }
+        }
+        else{
+
+            $temppage.=" <a href=\"".$url."?page=1\">1</a>";
+            $temppage.=" <span class=\"more\"></span>";
+            for($p=$page-2;$p<=$page+2;$p++){
+                if($p!=$page){
+                    $temppage.=" <a href=\"".$url."?page=".$p."\">".$p."</a>";
+                }else{
+                    $temppage.=" <a href=\"#\" class=\"hover\">".$p."</a>";
+
+                }
+            }
+            $temppage.="<span class=\"more\"></span>";
+            $temppage.=" <a href=\"".$url."?page=".$pagecount."\">".$pagecount."</a>";
+        }
+    }
+
+    if($page<=$pagecount-1){
+        $temppage.="<a href=\"".$url."?page=".$pagecount."\" >末页</a>";
+    }else{
+        $temppage.="<a href=\"#\" >末页</a>";
+    }
+
+    $temppage .="</ul></nav>";
+
+
+    if(!strpos($url, "?") === false)
+        $temppage=str_replace("?page=", "&page=", $temppage);
+
+    return $temppage;
+}
+
+
+/*
+ * 研判分页
+ * */
+
+function dspPagesForyan($url, $page, $pagesize, $rscount, $pagecount){
+
+    //参数安全处理
+    $url  = str_replace(array(">", "<"), array("&gt;", "&lt;"), $url);
+    if(!is_numeric($page))       $page = 0;
+    if(!is_numeric($pagesize))   $pagesize = 0;
+    if(!is_numeric($rscount))    $rscount = 0;
+    if(!is_numeric($pagecount))  $pagecount = 0;
+
+    $url = getUrlExcludePage($url);
+
+
+    $temppage="";
+    $temppage.="<nav aria-label=\"Page navigation\" class=\"pagination-box\"><ul class=\"num-box\">";
+
+    if($page>1){
+        $temppage.="<li><a href=\"".$url."?page=1\" aria-label=\"Previous\"><span aria-hidden=\"true\">首页</span></a></li>";
+    }else{
+        $temppage.="<li><a href=\"#\"><span aria-hidden=\"true\">首页</span></a></li>";
+    }
+
+    If($pagecount<9){
+
+        for($p=1;$p<=$pagecount;$p++){
+            if($p!=$page)
+                $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            else
+                $temppage.=" <li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+        }
+    }else{
+
+        if($page<=3){
+            for($p=1;$p<=5;$p++){
+                if($p!=$page)
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                else
+                    $temppage.="<li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            }
+            $temppage.=" <li><a href='#'>...</a></li>";
+            for($p=$pagecount-3;$p<=$pagecount;$p++){
+                if($p!=$page)
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                else
+                    $temppage.="<li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            }
+        }else if($pagecount-$page<=3){
+
+            for($p=1;$p<=3;$p++){
+                $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+            }
+            $temppage.="<li><a href='#'>...</a></li>";
+            for($p=$pagecount-4;$p<=$pagecount;$p++){
+                if($p!=$page){
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                }else{
+                    $temppage.=" <li class=\"active\"><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                }
+            }
+        }
+        else{
+            $temppage.=" <li><a href=\"".$url."?page=1\">1</a></li>";
+            $temppage.=" <li><a href='#'>...</a></li>";
+            for($p=$page-2;$p<=$page+2;$p++){
+                if($p!=$page){
+                    $temppage.=" <li><a href=\"".$url."?page=".$p."\">".$p."</a></li>";
+                }else{
+                    $temppage.=" <li class=\"active\"><a href=\"#\">".$p."</a></li>";
+
+                }
+            }
+            $temppage.="<li><a href='#'>...</a></li>";
+            $temppage.=" <li><a href=\"".$url."?page=".$pagecount."\">".$pagecount."</a></li>";
+        }
+    }
+
+    if($page<=$pagecount-1){
+        $temppage.="<li><a href=\"".$url."?page=".$pagecount."\" aria-label=\"Next\">末页</a></li>";
+    }else{
+        $temppage.="<li><a href=\"#\" aria-label=\"Next\">末页</a></li>";
+    }
+
+    $temppage .="</ul></nav>";
+
+
+
+    if(!strpos($url, "?") === false)
+        $temppage=str_replace("?page=", "&page=", $temppage);
+
+    return $temppage;
+}
+
+
+
+
+
+
+
+
 ?>
+
+
+
+
+

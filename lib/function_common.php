@@ -20,6 +20,7 @@
  * @return
  */
 function safeCheck($str, $number = 1, $script = 1){
+
 	$str = trim($str);
 	//防止SQL注入
 	if(!get_magic_quotes_gpc()){
@@ -30,7 +31,7 @@ function safeCheck($str, $number = 1, $script = 1){
 		$isint   = preg_match('/^-?\d+$/',$str);
 		$isfloat = preg_match('/^(-?\d+)(\.\d+)?$/',$str);
 		if(!$isint && !$isfloat){
-			die('参数必须为数字');
+			die('参数'.$str.'必须为数字!');
 		}
 	}else{
 		//过滤script、防XSS
@@ -61,6 +62,13 @@ function ckReplace($content){
  * @param mixed $str
  * @return
  */
+function getPageUrl(){
+    $url = (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
+    $url .= $_SERVER['HTTP_HOST'];
+    $url .= isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : urlencode($_SERVER['PHP_SELF']) . '?' . urlencode($_SERVER['QUERY_STRING']);
+    return $url;
+}
+
 function HTMLEncode($str){
 	if (!empty($str)){
 		$str = str_replace("&","&amp;",$str);
@@ -175,4 +183,203 @@ function action_msg($msg, $code, $json = true){
 	else
 		return $r;
 }
+
+
+function action_msg_data($msg, $code,$data=array(), $json = true){
+    $r = array(
+        'code' => $code,
+        'message'  => $msg,
+        'data'=>$data
+    );
+    if($json)
+        return json_encode_cn($r);
+    else
+        return $r;
+}
+
+
+
+
+
+function getProblemChineseNum($level)
+{
+    $dataArr = array(
+
+        1=>"一",
+        2=>"二",
+        3=>"三",
+        4=>"四",
+        5=>"五"
+    );
+
+
+    return isset($dataArr[$level])?$dataArr[$level]:"";
+
+}
+
+function getDepartmentChineseNum($level)
+{
+    $dataArr = array(
+
+        1=>"一",
+        2=>"二"
+    );
+
+
+    return isset($dataArr[$level])?$dataArr[$level]:"";
+
+}
+
+function explodeNew ($info)
+{
+    $results=array();
+    $find = array(
+        ",",
+        '，',
+        "~",
+        "～",
+        " ",
+        "、",
+        "<br/>"
+    );
+
+    $re = "#";
+    $info = str_replace($find,$re,trim($info));
+    foreach(explode("#",$info) as $item)
+    {
+        if(!empty($item)) $results[] = $item;
+    }
+
+    return $results;
+
+}
+
+
+
+function  subStrContent($content,$len,$dian=0)
+{
+
+    if(mb_strlen($content,"UTF-8")>$len)
+    {
+
+        $content = mb_substr($content,0,$len,"utf-8");
+        if($dian)
+        {
+            $content .="...";
+        }
+
+    }
+
+
+    return $content;
+}
+
+
+
+function  isVideo($ext)
+{
+
+    $extArr = array('mp4','MP4');
+    if(in_array($ext,$extArr))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+
+
+function getFirstCharter($str)
+{
+    if (empty($str)) {
+        return '';
+    }
+
+    $fchar = ord($str{0});
+    if ($fchar >= ord('A') && $fchar <= ord('z'))
+        return strtoupper($str{0});
+
+    $s1 = iconv('UTF-8','gbk//ignore', $str);
+    $s2 = iconv('gbk', 'UTF-8//ignore', $s1);
+    $s = $s2 == $str ? $s1 : $str;
+
+    $asc = ord($s{0}) * 256 + ord($s{1}) - 65536;
+
+    if ($asc >= -20319 && $asc <= -20284)
+        return 'A';
+
+    if ($asc >= -20283 && $asc <= -19776)
+        return 'B';
+
+    if ($asc >= -19775 && $asc <= -19219)
+        return 'C';
+
+    if ($asc >= -19218 && $asc <= -18711)
+        return 'D';
+
+    if ($asc >= -18710 && $asc <= -18527)
+        return 'E';
+
+    if ($asc >= -18526 && $asc <= -18240)
+        return 'F';
+
+    if ($asc >= -18239 && $asc <= -17923)
+        return 'G';
+
+    if ($asc >= -17922 && $asc <= -17418)
+        return 'H';
+
+    if ($asc >= -17417 && $asc <= -16475)
+        return 'J';
+
+    if ($asc >= -16474 && $asc <= -16213)
+        return 'K';
+
+    if ($asc >= -16212 && $asc <= -15641)
+        return 'L';
+
+    if ($asc >= -15640 && $asc <= -15166)
+        return 'M';
+
+    if ($asc >= -15165 && $asc <= -14923)
+        return 'N';
+
+    if ($asc >= -14922 && $asc <= -14915)
+        return 'O';
+
+    if ($asc >= -14914 && $asc <= -14631)
+        return 'P';
+
+    if ($asc >= -14630 && $asc <= -14150)
+        return 'Q';
+
+    if ($asc >= -14149 && $asc <= -14091)
+        return 'R';
+
+    if ($asc >= -14090 && $asc <= -13319)
+        return 'S';
+
+    if ($asc >= -13318 && $asc <= -12839)
+        return 'T';
+
+    if ($asc >= -12838 && $asc <= -12557)
+        return 'W';
+
+    if ($asc >= -12556 && $asc <= -11848)
+        return 'X';
+
+    if ($asc >= -11847 && $asc <= -11056)
+        return 'Y';
+
+    if ($asc >= -11055 && $asc <= -10247)
+        return 'Z';
+
+    return null;
+
+}
+
 ?>
