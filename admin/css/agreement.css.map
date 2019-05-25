@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,UAAU;EACR,OAAO,EAAE,+BAA2C;EACpD,0BAAe;IACb,aAAa,EAAE,eAAa;EAE9B,gBAAK;IACH,KAAK,EAAE,OAAO;IACd,SAAS,EAAE,IAAI;IACf,WAAW,EAAE,eAAe;EAE9B,gBAAK;IACH,SAAS,EAAE,IAAI;IACf,KAAK,EAAE,OAAO;IACd,WAAW,EAAE,gBAAgB;IAC7B,WAAW,EAAE,eAAa",
+"sources": ["../scss/agreement.scss"],
+"names": [],
+"file": "agreement.css"
+}

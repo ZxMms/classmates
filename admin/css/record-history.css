@@ -1,0 +1,27 @@
+.record-con {
+  padding: 0 0.4rem; }
+  .record-con .record-list {
+    padding: 0.4533333333rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E6EAF0; }
+    .record-con .record-list .record-time {
+      font-size: 12px;
+      color: #959FAC; }
+    .record-con .record-list .record-nums .record-text {
+      color: #485465;
+      font-size: 12px;
+      vertical-align: middle; }
+    .record-con .record-list .record-nums .record-num {
+      font-size: 16px;
+      color: #304FCD;
+      margin-left: 0.4rem;
+      font-family: Impact;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+  .record-con .record-list:last-child {
+    border-bottom: none; }
+
+/*# sourceMappingURL=record-history.css.map */

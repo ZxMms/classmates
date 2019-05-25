@@ -1,0 +1,15 @@
+.agreement {
+  padding: 0.467rem 0.4rem 0 0.4rem; }
+  .agreement .agreement-list {
+    margin-bottom: 0.6666666667rem; }
+  .agreement .bold {
+    color: #485465;
+    font-size: 16px;
+    font-family: PingFang Medium; }
+  .agreement .fine {
+    font-size: 14px;
+    color: #485465;
+    font-family: PingFang Regular;
+    line-height: 0.5333333333rem; }
+
+/*# sourceMappingURL=agreement.css.map */

@@ -25,6 +25,7 @@ $CountSQLSelect = 0;
 require($LIB_PATH.'function_common.php');
 require($LIB_PATH.'function.inc.php');
 
+require($LIB_COMMON_PATH.'phpexcel/PHPExcel.class.php');
 //自动加载类文件 2016/6/23更新
 require($LIB_COMMON_PATH.'autoloader.class.php');
 spl_autoload_register('Autoloader::autoload');

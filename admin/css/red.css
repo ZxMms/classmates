@@ -1,0 +1,87 @@
+.show-box-red {
+  background: #FF2600 !important; }
+
+.echarts-box {
+  padding: 0.4rem 0; }
+  .echarts-box .echarts-tit {
+    padding: 0 0.32rem; }
+    .echarts-box .echarts-tit .echarts-text {
+      font-size: 12px;
+      color: #343434; }
+  .echarts-box .progress-box {
+    padding: 0.6666666667rem 0.4rem 0.72rem 0.4rem; }
+    .echarts-box .progress-box .progress-li {
+      padding: 0 !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem; }
+      .echarts-box .progress-box .progress-li .progress-name {
+        color: #343434;
+        font-size: 12px;
+        text-align: right;
+        width: 50px; }
+      .echarts-box .progress-box .progress-li .progress {
+        width: 7.4133333333rem;
+        height: 0.1066666667rem;
+        background: #4DC861;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible; }
+        .echarts-box .progress-box .progress-li .progress .progress-bar {
+          position: relative;
+          -webkit-animation: animate-positive 2s;
+          animation: animate-positive 2s; }
+          .echarts-box .progress-box .progress-li .progress .progress-bar .progress-value {
+            display: block;
+            font-size: 11px;
+            color: #000;
+            position: absolute;
+            top: -0.48rem;
+            right: 0; }
+        .echarts-box .progress-box .progress-li .progress .progress-bar:after {
+          content: "";
+          display: inline-block;
+          width: 0.1333333333rem;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 1;
+          transform: rotate(35deg); }
+    .echarts-box .progress-box .progress-li:last-child {
+      margin-bottom: 0; }
+  .echarts-box .look-more {
+    color: #FF0000;
+    font-size: 16px;
+    text-align: center; }
+    .echarts-box .look-more img {
+      width: 0.4rem;
+      height: 0.4rem; }
+
+.risk {
+  padding: 0.6133333333rem 1.0666666667rem 0.64rem 0.56rem;
+  border-bottom: 1px solid #EAEAEA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .risk .risk-flex {
+    width: 5.44rem; }
+    .risk .risk-flex .risk-tit {
+      color: #343434;
+      font-size: 14px; }
+    .risk .risk-flex p {
+      color: #959EAB;
+      font-size: 12px; }
+  .risk .risk-cir {
+    width: 1.6266666667rem;
+    height: 1.6266666667rem;
+    line-height: 1.6266666667rem;
+    text-align: center;
+    background: #8791A1;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #FFFFFF; }
+
+/*# sourceMappingURL=red.css.map */

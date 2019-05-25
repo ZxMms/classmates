@@ -1,0 +1,332 @@
+.big-box {
+  padding-top: 0rem;
+}
+
+.head {
+  height: 1.3333333333rem;
+  line-height: 1.3333333333rem;
+  padding: 0 0.2933333333rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 0 1px #eaeaea;
+}
+
+.head .back-icon {
+  height: 0.48rem;
+}
+
+.head .title {
+  font-family: FZLTXHK--GBK1-0;
+  color: #3C3C3C;
+  font-size: 19px;
+}
+
+.head .ellipsis-icon {
+  width: 0.5866666667rem;
+}
+
+.rolling {
+  position: relative;
+  padding: 0 15px;
+  background: -webkit-linear-gradient(left, #1E89FF, #304FCD);
+  background: -o-linear-gradient(right, #1E89FF, #304FCD);
+  background: -moz-linear-gradient(right, #1E89FF, #304FCD);
+  background: linear-gradient(to right, #1E89FF, #304FCD);
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  color: #fff;
+  font-family: PingFangSC-Regular, sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.flex-wrap {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 28px;
+}
+
+.img-logo {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #2F4FD0;
+  text-align: center;
+  font-family: PingFang Regular;
+  margin-bottom: 15px;
+}
+
+.img-logo .logo-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.main-con {
+  position: absolute;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  left: 0;
+  top: 25%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.main-con .analysis {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+.main-con .analysis .blue {
+  display: inline-block;
+  width: 0.1333333333rem;
+  height: 0.4533333333rem;
+  background: #304FCD;
+  border-radius: 0.08rem;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.main-con .analysis .analysis-name {
+  font-size: 16px;
+  color: #485465;
+  font-family: PingFangSC-Regular, sans-serif;
+  vertical-align: middle;
+}
+
+.input-pos {
+  position: relative;
+}
+
+.input-pos img {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.main-con .input-border {
+  background: #F3F3F3;
+  border-radius: 3px;
+  border: 1px solid #304FCD;
+  color: #000000;
+  font-family: PingFangSC-Regular, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  outline: medium none;
+  width: 100%;
+  background-position-y: center;
+  display: block;
+  margin: 15px 0 8px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+
+.main-con .show-text {
+  color: #959FAC;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, sans-serif;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  text-align: justify;
+}
+
+.main-con .ad {
+  width: 100%;
+  /* height: 140px; */
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.main-con .ad img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-con .ad .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+ 
+.index-scroll-wrap {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.index-scroll {
+  height: 180px;
+  border: 1px dashed #304FCD;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.index-scroll-con {
+  padding: 0 15px;
+}
+
+.index-scroll-title {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #485465;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #D2DCED;
+}
+
+.index-scroll-title img.love {
+  width: 18px !important;
+  height: 16px !important;
+  margin: 0 2px;
+}
+
+.index-scroll-cells {
+  position: relative;
+  height: 130px;
+  padding: 0 5px; 
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.index-scroll-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.index-scroll-cell .cell-left {
+  font-size: 12px;
+  color: #485465;
+}
+
+.index-scroll-cell .cell-right {
+  font-size: 14px;
+  color: #485465;
+}
+
+.index-scroll-cell .cell-left img {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%; 
+  margin-right: 10px;
+}
+
+.push-two {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+  left: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.push-two .push-all {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, sans-serif;
+  width: 4.4rem;
+  height: 1.4933333333rem;
+  line-height: 1.4933333333rem;
+  text-align: center;
+}
+
+.push-two .push-all .push-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+.push-two .push-ticket {
+  background: #fff url("../img/bg1@3x.png");
+  background-size: 100% 100%;
+}
+
+.push-two .push-group {
+  background: #fff url("../img/bg2@3x.png");
+  background-size: 100% 100%;
+}
+
+.foot-box {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.foot-box .foot-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot-box .foot-list .foot-icon {
+  width: 0.5066666667rem;
+  height: 0.5066666667rem;
+}
+
+.foot-box .foot-list .foot-text {
+  color: #767481;
+  font-size: 10px;
+  margin-top: 0.08rem;
+}
+
+/*# sourceMappingURL=index.css.map */
+
+@media screen and (max-width: 320px) {
+  .main-con .show-text {
+    font-size: 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+  .main-con .input-border {
+    font-size: 12px;
+    height: 30px;
+    margin: 10px 0 4px 0;
+  }
+  .img-logo .logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .index-scroll {
+    height: 140px;
+  }
+  .index-scroll-cells {
+    height: 100px;
+  }
+}

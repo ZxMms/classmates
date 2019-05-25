@@ -1,0 +1,152 @@
+.head-bg {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  background: url("../img/mybg.png") no-repeat;
+  background-size: 100%; }
+  .head-bg .personal-logo {
+    width: 2.1333333333rem;
+    height: 2.1333333333rem;
+    border-radius: 50%;
+    margin: 0 0.8rem;
+    overflow: hidden; }
+    .head-bg .personal-logo .personal-icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%; }
+  .head-bg .personal-name {
+    color: #FFFFFD;
+    font-size: 24px; }
+
+.my-query {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3733333333rem 0.4rem;
+  background: #fff; }
+  .my-query .query-right .query-text {
+    color: #485465;
+    font-size: 12px;
+    vertical-align: middle; }
+  .my-query .query-right .query-num {
+    color: #304FCD;
+    font-size: 16px;
+    font-family: Impact;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+    font-weight: bold;
+  }
+
+.blue {
+  display: inline-block;
+  width: 0.1333333333rem;
+  height: 0.4533333333rem;
+  background: #304FCD;
+  border-radius: 0.08rem;
+  vertical-align: middle; }
+
+.analysis-name {
+  font-size: 16px;
+  color: #485465;
+  font-family: PingFang Medium;
+  vertical-align: middle; }
+
+.frequency {
+  margin-top: 0.2666666667rem;
+  padding: 0.4rem;
+  background: #fff; }
+  .frequency .frequency-all {
+    border-bottom: 1px solid #E6EAF0;
+    padding-bottom: 0.2666666667rem; }
+  .frequency .frequency-ul .frequency-list {
+    margin-top: 0.4rem;
+    padding: 13px 10px;
+    background: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+    .frequency .frequency-ul .active {
+      background-color: #F4F6FC;
+      border: 1px solid #304FCD;
+    }    
+
+    .frequency .frequency-ul .frequency-list .frequency-con {
+      display: flex;
+      align-items: center;
+    }
+
+    .frequency .frequency-ul .frequency-list .frequency-con .frequency-name {
+      color: #485465;
+      font-size: 14px;
+      font-family: PingFang Regular; }
+    .frequency .frequency-ul .frequency-list .frequency-con .frequency-num {
+      color: #485465;
+      font-size: 14px;
+      font-family: PingFang Regular;
+      margin-left: 0.2666666667rem; }
+    .frequency .frequency-ul .frequency-list .frequency-con .super {
+      position: relative;
+      left: 4px;
+      display: inline-block;
+      width: 28px;
+      height: 16px;
+      line-height: 16px;
+      border-radius: 2px;
+      background: linear-gradient(to right, #FF6742, #FF7D00);
+      color: #fff;
+      font-size: 10px;
+      text-align: center; }
+    .frequency .frequency-ul .frequency-list .money {
+      color: #304FCD;
+      font-size: 14px;
+      font-family: Impact;
+      font-weight: bold;
+    }
+  .frequency .buy {
+    padding: 13px 10px 0 10px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: PingFang Regular; }
+    .frequency .buy .agree .agree-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 0.3733333333rem;
+      height: 0.3733333333rem;
+      background-image: url("../img/successcopy@3x.png");
+      background-size: 100%; }
+      .frequency .buy .agree .agree-icon .checkbox-agree {
+        opacity: 0;
+        margin-top: 0;
+        width: 0.3733333333rem;
+        height: 0.3733333333rem;
+        vertical-align: middle;
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        -khtml-opacity: 0; }
+    .frequency .buy .agree span {
+      vertical-align: middle;
+      margin-top: 4px;
+      display: inline-block; }
+    .frequency .buy .agree .agree-name {
+      color: #959FAC;
+      font-size: 12px; }
+    .frequency .buy .agree .agreement {
+      color: #304FCD;
+      font-size: 12px; }
+    .frequency .buy .buy-btn {
+      outline: none;
+      border: none;
+      background: #A4B6FF;
+      border-radius: 2px;
+      padding: 0.16rem 0.3466666667rem;
+      color: #fff;
+      font-size: 12px; }
+
+.record {
+  margin-top: 0.2666666667rem; }
+
+/*# sourceMappingURL=personal-center.css.map */

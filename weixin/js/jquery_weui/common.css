@@ -1,0 +1,148 @@
+/** 
+* 途酒VIP公众号UI
+* rexXu
+ */
+
+/** common **/
+body{background:#ffffff;}
+.pageMain{max-width:700px;margin: 0 auto;overflow:hidden;background:#f7eae1;min-height:100vh;}
+.clearfix::after{content: "";display: table;clear: both;overflow: hidden;visibility: hidden;position:relative;}
+.weui-cell_access input{text-align:right;border:0px;outline:none;background:#faf7f2 !important;}
+.weui-cell_access:active{background:#f7eae1 !important;}
+
+/*
+ * header
+ */
+.page-header{padding-left:40px;padding-right:40px;position:fixed;height:44px;line-height:44px;background:#f7eae1;overflow:hidden;left:0px;right:0px;z-index:200;}
+.page-title{line-height:44px;font-size:16px;color:#846639;}
+.page-header .pageBack{width:44px;height:44px;display:block;position:absolute;top:0px;left:10px;}
+.page-header .pageBack:after{content: " ";display: inline-block;height:8px;width: 8px; border-width: 0px 0px 2px 2px;border-color: #846639; border-style: solid;-webkit-transform: matrix(.71,.71,-.71,.71,0,0);transform: matrix(.71,.71,-.71,.71,0,0);position: relative;top: -2px;position: absolute;top: 50%;margin-top: -6px;right:22px;}
+
+
+
+.page-unit-header{padding-left:90px;padding-right:55px;position:fixed;height:44px;line-height:44px;background:#f7eae1;overflow:hidden;left:0px;right:0px;z-index:200;}
+
+
+.page-unit-searchBox{line-height:44px;font-size:16px;color:#846639;}
+.page-unit-header .searchCity{width:80px;height:44px;display:block;position:absolute;top:0px;left:0px;color:#000;text-align:center;}
+.page-unit-header .searchCity:before{content: " ";position: absolute;width: 0;height: 0;border-right: 4px solid #999;border-bottom: 4px solid #999;border-top: 4px solid #f7eae1;border-left: 4px solid #f7eae1;bottom:10px;right:0px;}
+
+.page-unit-header .searchMap{height:44px;display:block;position:absolute;top:0px;right:10px;line-height:44px;font-size:16px;color:#846639;
+background:url(../../img/map.png) center no-repeat;width:44px;background-size:65%;
+}
+.page-unit-searchBox{position:relative;height:28px;overflow: hidden;margin-top:8px;background:url(../../img/search.png) 4px center no-repeat #fff;background-size:10%;padding-left:35px;padding-right:15px;border-radius:15px;}
+.page-unit-searchBox:after {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;border: 1px solid #7e5015;-webkit-transform: scale(.5);transform: scale(.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius:30px;}
+.page-unit-searchBox input{position:absolute;height:20px;border:0px;top:5px;bottom:2px;left:35px;right:0px;line-height:26px;color:#7e5015;z-index:300;display:block;width:80%;outline:none;}
+
+.page-body{padding-top:44px;position:relative;}
+.pageSetting{height:44px;display:block;position:absolute;top:0px;right:10px;line-height:44px;font-size:16px;color:#846639;}
+
+
+/*
+ * Label
+ */
+.page-label{}
+.page-label::after{content: "";display: table;clear: both;overflow: hidden;visibility: hidden;}
+.page-label-item{line-height:26px;display:block;float:left;background:#fff;color:#ff0000;border-radius:13px;font-size:14px;padding:0px 13px;margin:10px 0px 10px 10px;position:relative;}
+.page-label-item.active{background:#ff5901;color:#fff;}
+.page-label-item:after {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;border: 1px solid #ff5901;-webkit-transform: scale(.5);transform: scale(.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius:30px;}
+
+
+
+
+
+/**  demo **/
+.demos-header{padding:30px 0px 30px 0px;}
+.demos-title{line-height:30px;font-size:20px;text-align:center;}
+
+
+
+/*
+ * ui拓展 number组件
+ */
+.weui-number{position:relative;width:100px;height:30px;background:#ffffff;margin-top:-5px;margin-bottom:-5px;overflow:hidden;text-align:center;color:#846639;line-height:34px;}
+.weui-number-cut{z-index: 100;width:30px;height:30px;position:absolute;top:0px;left:0px;background:#efe1d3;}
+.weui-number-cut:after{content: " ";width: 200%;height: 200%;position: absolute;top:14px;left:7px;background:#fff;width:14px;height:2px;}
+.weui-number-add{z-index: 100;width:30px;height:30px;position:absolute;top:0px;right:0px;background:#efe1d3;}
+.weui-number-add:after{content: " ";width: 200%;height: 200%;position: absolute;top:14px;left:8px;background:#fff;width:14px;height:2px;}
+.weui-number-add:before{content: " ";width: 200%;height: 200%;position: absolute;top:8px;left:14px;background:#fff;height:14px;width:2px;}
+.weui-number:after {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;
+    border: 1px solid #fee1c4;-webkit-transform: scale(.5);transform: scale(.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius:0px;}
+
+
+
+
+/*
+ * 优惠券列表
+ */
+.vouvherList{position:relative;margin-top:0px;}
+.vouvher-item{min-height:100px;overflow:hidden;position:relative;padding-left:90px;margin-left:-5px;margin-right:-5px;}
+.vouvher-item-img{width:80px;height:80px;overflow:hidden;position:absolute;top:0px;left:0px;}
+.vouvher-item-tit{font-size:17px;color:#000;line-height:30px;}
+.vouvher-item-usertime{font-size:12px;color:#666;line-height:22px;}
+.vouvher-item-userDes{margin-top:5px;font-size:12px;line-height:22px;padding-top:5px;position:relative;color:#666;}
+.vouvher-item-userDes:after{content: " ";position: absolute;left: 0;right: 0;height: 1px;color: #eeeeee;top: 0;border-bottom: 1px solid #eeeeee;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(.5);transform: scaleY(.5);}
+.vouvher-item-userDes span{float:right;}
+.free-btn{background:#ffcc00 !important;}
+.vouvher-item-btn-end{position:absolute;top:35px;right:0px;font-size:12px;background:#ffffff;color:#333;border-radius:14px;line-height:24px;padding:2px 10px;}
+.vouvher-item-btn-end:after {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;border: 1px solid #999;-webkit-transform: scale(.5);transform: scale(.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius:30px;}
+.vouvher-item-btn{position:absolute;top:0px;right:0px;font-size:12px;background:#ff5901;color:#fff;border-radius:14px;line-height:24px;padding:2px 10px;}
+.vouvher-item-price .price{font-size:16px;color:#ff5901;}
+.vouvher-item-price .des{font-size:12px;}
+.vouvher-item-number{position:absolute;top:35px;right:0px;line-height:18px;font-size:12px;color:#ff5901;}
+
+/*
+ * 优惠券汽车
+ */
+.vouvherCarList{position:relative;margin-top:0px;}
+.vouvherCarList-item{min-height:80px;overflow:hidden;position:relative;padding-left:90px;margin-left:-5px;margin-right:-5px;}
+
+/*
+ * 购买优惠券
+ */
+.vouvherOrderFrom{position:relative;margin-top:0px;font-size:15px;}
+.selectVouvherHeader{padding:0px 15px;font-size:15px;color:#846639;line-height:35px;}
+.vouvherOrderSetting{height:45px;position:fixed;bottom:0px;left:0px;right:0px;}
+.vouvherOrderSetting .vouvherOrderSetting__item{float:left;line-height:45px;}
+.wap-tabbar__label{padding-left:15px;color:#000;}
+
+
+/*
+ * 也签切换
+ */
+.weui-bar__item--on{color:#846639 !important;background:none !important;font-weight:900;}
+.weui-bar__item--on::before{content: " ";position: absolute;top:40px;left:50%;margin-left:-40px;background:#846639;width:80px;height:2px;}
+.vouvher-tabSet .weui-navbar{background:none !important;}
+.vouvher-tabSet .weui-navbar .weui-navbar__item:after{display:none;}
+.vouvher-tabSet .weui-navbar:after{display:none;}
+
+.destetx{padding:0px 15px 15px 15px;line-height:1.5em;font-size:14px;color:#666;}
+/*
+ * 优惠券二维吗
+ */
+.vouvher-qecode{position:relative;background:#faf7f2;padding-bottom:40px;}
+.vouvher-qecod-header{padding-top:40px;line-height:40px;text-align:center;color:#846639;font-size:24px;font-weight:900;}
+.vouvher-qecod-body{width:200px;height:200px;margin:0 auto;}
+.vouvher-qecod-body img{width:200px;height:200px;}
+.vouvher-qecod-footer{text-align:center;font-size:16px;line-height:1.5em;}
+.vouvher-qecod-des{text-align:center;font-size:14px;color:#169BD5;}
+
+
+/*
+ * 门店列表
+ */
+.storeList{position:relative;margin-top:0px;}
+.store-item{min-height:100px;overflow:hidden;position:relative;padding-left:90px;margin-left:-5px;margin-right:-5px;}
+.store-item-img{width:80px;height:80px;overflow:hidden;position:absolute;top:0px;left:0px;}
+.store-item-tit{font-size:17px;color:#000;line-height:30px;}
+.store-item-usertime{font-size:12px;color:#666;line-height:22px;}
+.store-item-userDes{margin-top:5px;font-size:12px;line-height:22px;padding-top:6px;position:relative;color:#666;text-align:right;}
+.store-item-userDes:after{content: " ";position: absolute;left: 0;right: 0;height: 1px;color: #eeeeee;top: 0;border-bottom: 1px solid #eeeeee;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(.5);transform: scaleY(.5);}
+.store-item-userDes span{float:left;}
+.free-btn{background:#ffcc00 !important;}
+.store-item-btn-end{position:absolute;top:35px;right:0px;font-size:12px;background:#ffffff;color:#333;border-radius:14px;line-height:24px;padding:2px 10px;}
+.store-item-btn-end:after {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;border: 1px solid #999;-webkit-transform: scale(.5);transform: scale(.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius:30px;}
+.store-item-btn{position:absolute;top:0px;right:0px;font-size:12px;background:#ff5901;color:#fff;border-radius:14px;line-height:24px;padding:2px 10px;}
+.store-item-price .des{font-size:12px;color:#666;}
+.store-item-number{position:absolute;top:0px;right:0px;line-height:30px;font-size:16px;color:#ff5901;}
+.store-item-userDes .wine_name{background:#f7eae1;padding:0px 5px;color:#655c3f;}

@@ -1,0 +1,23 @@
+.news-content {
+  padding: 0.5333333333rem 0.4rem 0 0.4rem; }
+  .news-content .news-name {
+    padding: 0 0.6133333333rem;
+    text-align: center;
+    color: #485465;
+    font-size: 16px;
+    margin-bottom: 0.2666666667rem; }
+  .news-content .news-date {
+    color: #959FAC;
+    font-size: 12px;
+    text-align: center; }
+    .news-content .news-date .news-time {
+      margin-left: 0.4rem; }
+  .news-content .chart {
+    height: 4.2666666667rem;
+    background: #0b72b7;
+    margin: 0.5333333333rem 0; }
+  .news-content .news-con {
+    color: #485465;
+    font-size: 14px; }
+
+/*# sourceMappingURL=information-details.css.map */

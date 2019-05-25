@@ -1,0 +1,21 @@
+.infor-con {
+  padding: 0.1066666667rem 0.4rem 0 0.4rem; }
+  .infor-con .infor-list {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #E6EAF0;
+    font-family: PingFang Regular; }
+    .infor-con .infor-list .infor-name {
+      color: #485465;
+      font-size: 0.4266666667rem;
+      margin-bottom: 0.2666666667rem; }
+    .infor-con .infor-list .infor-time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .infor-con .infor-list .infor-time span {
+        color: #959FAC;
+        font-size: 12px; }
+  .infor-con .infor-list:last-child {
+    border-bottom: none; }
+
+/*# sourceMappingURL=information-list.css.map */

@@ -16,7 +16,7 @@
 	require_once('../config.inc.php');
 
 	//数据结构
-	//$sqlstr[0]="DROP DATABASE IF EXISTS ".$DB_name.";";
+	$sqlstr[0]="use DATABASE  classmaters";
 	//$sqlstr[1]="CREATE DATABASE `".$DB_name."`;";
 
 	$sqlstr[0]="CREATE TABLE `".$DB_prefix."admin` (

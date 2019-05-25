@@ -1,0 +1,20 @@
+.pay-logo {
+  padding-top: 0.8266666667rem;
+  text-align: center; }
+  .pay-logo .success-icon {
+    width: 3.1733333333rem;
+    height: 2.1866666667rem; }
+  .pay-logo p {
+    color: #485465;
+    font-size: 24px;
+    margin: 23px 0 80px 0; }
+  .pay-logo .pay-ok {
+    padding: 0.32rem 1.5733333333rem;
+    border-radius: 4px;
+    border: 1px solid #304FCD;
+    box-shadow: 0 3px 6px rgba(48, 79, 205, 0.3);
+    color: #304FCD;
+    font-size: 16px;
+    background: #ffffff; }
+
+/*# sourceMappingURL=pay.css.map */

@@ -17,5 +17,6 @@
 		if($FLAG_LEFTMENU == 'adminlog_list') echo ' class="active"';
 		echo ' href="adminlog_list.php">管理员日志</a></div><div class="menuline"></div>';
 	}
+
   ?>
 </div>

@@ -1,0 +1,326 @@
+.up-file {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+  .up-file .img-file {
+    width: 150px;
+    position: relative; }
+    .up-file .img-file .up-img {
+      width: 150px;
+      height: 220px;
+      display: block;
+      border: 1px solid #cccccc;
+      margin-bottom: 5px; }
+    .up-file .img-file .img-tips {
+      margin-bottom: 0;
+      color: #cccccc;
+      font-size: 14px; }
+  .up-file .span-one {
+    font-size: 16px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+    margin-right: 10px;
+    vertical-align: top; }
+  .up-file .explain {
+    width: 750px; }
+
+.all-form {
+  margin-top: 30px; }
+  .all-form table {
+    width: 100%; }
+    .all-form table tbody tr {
+      width: 100%;
+      display: inline-block;
+      padding: 5px 0 5px 0; }
+      .all-form table tbody tr td {
+        display: inline-block;
+        margin-right: 30px; }
+        .all-form table tbody tr td input {
+          display: inline-block;
+          background: #f7f8f9;
+          margin-left: 5px; }
+        .all-form table tbody tr td select {
+          display: inline-block;
+          background: #f7f8f9;
+          margin-left: 5px; }
+        .all-form table tbody tr td .tip-in {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          height: 32px;
+          padding-left: 5px;
+          font-size: 16px;
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          color: #333333;
+          width: 355px; }
+      .all-form table tbody tr td:last-child {
+        margin-right: 0; }
+
+.choose-btn {
+  text-align: right;
+  margin-top: 20px; }
+  .choose-btn .success-bt {
+    width: 100px;
+    padding: 10px 20px;
+    text-align: center;
+    outline: none;
+    border: 0;
+    border-radius: 3px; }
+  .choose-btn .no {
+    background: #f7f8f9;
+    border: 1px solid #E4E8EB; }
+  .choose-btn .ok {
+    background-color: #3ea2e6;
+    color: #fff;
+    margin: 0 40px 0 50px; }
+
+.all-three {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+padding: 50px;
+    background: #fff;}
+  .all-three .show-list {
+    border: 1px solid #e4e8eb;
+    width: 300px; }
+    .all-three .show-list .show-img {
+      display: block;
+      width: 100%;
+      height: 100%; }
+    .all-three .show-list .show-text {
+      background-color: #F8F8F8;
+      padding: 20px 0 10px 30px; }
+      .all-three .show-list .show-text .one-line {
+        font-size: 16px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: #333333; }
+      .all-three .show-list .show-text .two-line {
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: #707070; }
+
+.form-tit {
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #3EA1E6;
+  display: inline-block; }
+
+.td-span {
+  display: inline-block;
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  vertical-align: middle; }
+
+.close-del {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background: none; }
+
+.theme .theme-in {
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  width: 700px;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 5px;
+  border-radius: 2px;
+  background: #f7f8f9;
+  outline: none;
+  border: 1px solid #E4E8EB; }
+.theme input::-webkit-input-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme input:-moz-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme input::-moz-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme input:-ms-input-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme .explain-text {
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  width: 700px;
+  height: 200px;
+  padding: 5px;
+  border-radius: 2px;
+  background: #f7f8f9;
+  border: 1px solid #E4E8EB; }
+.theme textarea::-webkit-input-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme textarea:-moz-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme textarea::-moz-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+.theme textarea:-ms-input-placeholder {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #707070; }
+
+.survey-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 5px;
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  width: 500px;
+  margin-left: 5px;
+  display: inline-block;
+  background: #f7f8f9; }
+
+.form-control {
+  display: inline-block;
+  margin-left: 5px;
+  background: #f7f8f9; }
+
+.survey-list {
+  width: 100%; }
+  .survey-list .survey-li {
+    display: flex; }
+    .survey-list .survey-li .survey-span {
+      margin-top: 10px;
+      white-space: nowrap;
+      display: block;
+      height: 20px; }
+    .survey-list .survey-li .survey-con {
+      display: inline-block;
+      margin-left: 35px; }
+      .survey-list .survey-li .survey-con .survey-line {
+        display: inline-block;
+        padding: 5px 0 5px 0; }
+        .survey-list .survey-li .survey-con .survey-line .survey-package {
+          display: inline-block;
+          margin-right: 28px; }
+        .survey-list .survey-li .survey-con .survey-line .survey-option {
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          height: 32px;
+          padding-left: 5px;
+          font-size: 16px;
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          color: #333333;
+          width: 335px;
+          margin-left: 5px;
+          background: #f7f8f9;
+          overflow-y: scroll;
+          overflow-x: hidden; }
+        .survey-list .survey-li .survey-con .survey-line .survey-option::-webkit-scrollbar {
+          display: none; }
+
+.layui-layer-content::-webkit-scrollbar {
+  display: none; }
+
+.two-chos .situation-li {
+  display: inline-block; }
+  .two-chos .situation-li .choose-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: none; }
+  .two-chos .situation-li .r-btn {
+    width: 12px;
+    height: 12px;
+    background: #F1F1F1;
+    border: 0.5px solid #CCCCCC;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: -webkit-baseline-middle; }
+  .two-chos .situation-li .choose-radio:checked + .r-btn {
+    background: #5F85B6;
+    border: 0.5px solid #3B5787; }
+  .two-chos .situation-li .situation-name {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0.42px;
+    vertical-align: text-top;
+    margin-left: 5px; }
+.two-chos .warning-chos {
+  display: inline-block;
+  color: #cccccc;
+  font-size: 14px;
+  font-family: PingFangSC-Regular; }
+  .two-chos .warning-chos .bor-chos {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #848885;
+    margin-left: 5px;
+    display: inline-block;
+    background: #f7f8f9; }
+
+.manage {
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px; }
+  .manage .show-all {
+    font-size: 16px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #aa7700;
+    margin: 20px auto 0 auto;
+    outline: none;
+    border: 0;
+    text-align: center;
+    display: block;
+    background: none; }
+
+.theme {
+  padding: 5px 0 5px 0; }
+  .theme .remarks {
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #0C0C0C;
+    width: 64px;
+    display: inline-block;
+    text-align: right; }
+
+.btn {
+  margin-left: 15px;
+  padding: 8px 25px; }
+
+/*# sourceMappingURL=popup.css.map */

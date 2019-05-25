@@ -1,26 +1,21 @@
-		<script>
-		$(function(){
-            //管理员修改密码
-			$("#newpass").click(function(){
-	            layer.open({
-	                type: 2,
-	                title: '修改密码',
-	                shadeClose: true,
-	                shade: 0.3,
-	                area: ['500px', '300px'],
-	                content: 'admin_resetpass.php'
-	            }); 
-			});
-		});
-		</script>
-		<div class="top">
-			<div class="logo" style="position:absolute;top:18px;left:0;">
-				<a href="index.php"><img src="images/logo.jpg" height="60" alt="" /></a>
-			</div>
-			<div class="topinfo2">
-				管理员，欢迎您！ 帐号：<?php echo $ADMIN->getAccount();?> <?php echo $ADMINGROUP->getName();?>
-			</div>
-			<div class="topinfo">
-				[<a id="newpass" href="javascript:void(0);" title="修改密码">修改密码</a>] [<a href="adminlogout.php" title="退出登录">退出登录</a>]
-			</div>
-		</div>
+<script type="text/javascript" src="static/js/bootstrap/js/bootstrap.js"></script>
+<div class="mainHeader">
+    <div class="mainHeader_title">欢迎进入友家校友信息管理系统！</div>
+    <div class="btn-group mainHeader_user">
+        <button type="button" class="btn btn-default dropdown-toggle noimage" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <?php $myName = Admin::getInfoById($_SESSION[$session_ADMINID]);
+            echo $myName['account'];
+            ?><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu no-imageposition">
+            <li><a href="login.php">退出登录</a></li>
+
+            <li><a onclick="openModelWindow('修改密码','change_pass.php', '450px', '300px');">修改密码</a></li>
+
+        </ul>
+    </div>
+
+
+
+</div>

@@ -12,13 +12,11 @@ require_once('admin_init.php');
 
 $check = Admin::checkLogin();
 if(empty($check)) {
-	header('Location: adminlogin.html');
-	exit();//header()之后一定要加上退出
+    header('Location: login.php');
+    exit();//header()之后一定要加上退出
 }else{
     $adminId = Admin::getSession();
-	$ADMIN = new Admin($adminId);
-	$ADMINGROUP = new Admingroup($ADMIN->getGroupID());
-	$ADMINAUTH = $ADMINGROUP->getAuth();
+    $ADMIN = new Admin($adminId);
 }
-	
+
 ?>

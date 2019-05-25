@@ -1,0 +1,181 @@
+* {
+    word-wrap: break-word;
+    outline: none;
+}
+
+body {
+    background: #FFF;
+    font-family: PingFangSC-Regular, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body,
+td,
+input,
+textarea,
+select,
+button {
+    color: #707070;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style-image: none;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 12px;
+}
+
+a {
+    color: #31b4e1;
+    text-decoration: none;
+    blr: expression(this.onFocus=this.blur())
+}
+
+a:hover {
+    color: #ec5051;
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+em,
+cite,
+th {
+    font-style: normal;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    text-align: left;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+i.fa {
+    font-size: 14px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+input[type='text']:focus {
+    border: 1px solid #62b3ff;
+}
+
+input[type='text'].error:focus {
+    border: 1px dashed #E84C3D;
+}
+
+input[type='submit'] {
+    outline: 0 none;
+}
+
+
+.mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.mark-con {
+    position: absolute;
+    width: 280px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mark-title {
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    background: url(../img/mark.png) no-repeat;
+    -webkit-background-size: 100% 100%; 
+    -moz-background-size: 100% 100%; 
+    background-size: 100% 100%; 
+    color: #fff;
+}
+
+.mark-text {
+    padding: 20px;
+    text-align: justify;
+    font-size: 16px;
+    color: #485465;
+    line-height: 24px;
+}
+
+.mark-btn {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #304FCD;
+    border-top: 1px solid #D8D8D8;
+}

@@ -1,102 +1,97 @@
 <?php
-	/**
-	 * 系统首页  index.php
-	 *
-	 * @version       v0.03
-	 * @create time   2014/8/4
-	 * @update time   2014/9/4 2016/3/25
-	 * @author        hlc jt
-	 * @copyright     Copyright (c) 芝麻开发 (http://www.zhimawork.com)
-	 */
-	require_once('admin_init.php');
-	require_once('admincheck.php');
-	$FLAG_TOPNAV = 'index';
+/**
+ * 系统首页  index.php
+ *
+ * @version       v0.03
+ * @create time   2014/8/4
+ * @update time   2014/9/4 2016/3/25
+ * @author        hlc jt
+ * @copyright     Copyright (c) 芝麻开发 (http://www.zhimawork.com)
+ */
+require_once('admin_init.php');
+require_once('admincheck.php');
+
+$POWERID = '1,2,3,4';//权限
+
+$FLAG_FIRST_LEFTNAV = 'index';
+//$FLAG_SECOND_LEFTNAV='';
+
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="author" content="芝麻开发 http://www.zhimawork.com" />
-		<title> 管理首页 </title>
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<link rel="stylesheet" href="css/form.css" type="text/css" />
-		<link rel="stylesheet" href="css/boxy.css" type="text/css" />
-		<link rel="stylesheet" href="js/tips/tipsy.css" type="text/css" />
-		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="js/layer/layer.js"></script>
-		
-	</head>
-	<body>
-		<div id="header">
-			<?php include('top.inc.php');?>
-			<?php include('nav.inc.php');?>
-		</div>
-		<div id="container">
-			<div id="main_index">
-				<div class="boxlist">
-					<div class="indexbox">
-						<div class="title icondefault">事务提醒</div>
-						<div class="content">
-							<table class="indextable">
-								<tr>
-									<td width="40%" class="c1">昨日新增A卡</td>
-									<td width="40%" class="c2">200</td>
-									<td width="20%" class="c3"></td>
-								</tr>
-								<tr>
-									<td class="c1">未处理A卡</td>
-									<td class="c2">50000</td>
-									<td class="c3"></td>
-								</tr>
-								<tr>
-									<td class="c1">经销商总数</td>
-									<td class="c2">20</td>
-									<td class="c3"><a href="#">查看</a></td>
-								</tr>
-								<tr>
-									<td class="c1">处理率&gt;50%的经销商数</td>
-									<td class="c2">10</td>
-									<td class="c3"><a href="#">查看</a></td>
-								</tr>
-								<tr>
-									<td class="c1">未处理留言</td>
-									<td class="c2">90</td>
-									<td class="c3"></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div class="indexbox">
-						<div class="title iconstat">数据统计</div>
-						<div class="content"></div>
-					</div>
-					<div class="indexbox">
-						<div class="title icondefault">特别关注</div>
-						<div class="content">
-							
-						</div>
-					</div>
-					<div class="indexbox">
-						<div class="title iconstat">系统信息</div>
-						<div class="content"></div>
-					</div>
-					<div class="indexbox">
-						<div class="title icondefault">特别关注</div>
-						<div class="content">
-							
-						</div>
-					</div>
-					<div class="indexbox">
-						<div class="title iconstat">系统信息</div>
-						<div class="content"></div>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div></div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<?php include('footer.inc.php');?>
-	</body>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="static/css/common.css"/>
+    <link rel="stylesheet" href="static/css/index.css"/>
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="static/js/layer/skin/default/layer.css"/>
+    <script type="text/javascript" src="static/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="static/js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="static/js/layer/layer.js"></script>
+    <script type="text/javascript">
+
+
+    </script>
+</head>
+<body>
+<div id="wrapper">
+
+
+                <?php
+                include_once ("nav.inc.php");
+                include_once ("top.inc.php");
+
+                ?>
+
+                <?php
+                $time =strtotime(date("Y-m-d"));
+                ?>
+
+    <div class="mainBox">
+            <!----主页面--->
+            <div class="mainPage">
+                <!----当前位置--->
+                <div class="page_header">
+                    <a href="">当前位置</a><span>：</span>
+                    <a href="">首页</a>
+
+                </div>
+                <style>
+
+                </style>
+
+                <div class="page_body" style="background:none;">
+                    <img src="images/1.jpg" width="100%" height="30%">
+                </div>
+
+            </div>
+    </div>
+
+</div>
+
+<?php
+//session_start();
+//if ($_SESSION['islogin'])
+//        echo '
+//        <div class="popup" type="hidden" id="islogin" value="1">
+//            <div class="popup-head">
+//            <img src="../static/img/close.png" alt="" class="close-icon">
+//            </div>
+//        <div class="popup-con">
+//            <img src="../static/img/email.png" alt="" class="email-icon">
+//            <div class="popup-text">
+//            <span class="you">您有新邮件</span><br>
+//            <a href="" class="go-look">前去查看</a>
+//            </div>
+//        </div>
+//    </div>
+//    ';
+//?>
+<script type="text/javascript" src="static/js/common.js"></script>
+</body>
+
 </html>
+

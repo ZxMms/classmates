@@ -1,0 +1,221 @@
+@font-face {
+  /* font-properties */
+  font-family: pingfang;
+  src:url('../font/PingFang.ttc');
+}
+
+.group {
+  padding: 0.4rem 1.6rem 0 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #E6EAF0; }
+  .group .fontB {
+    font-weight: bold; }
+  .group .group-left {
+    color: #485465;
+    font-size: 18px;
+    font-family: PingFangSC-Light, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .group .group-left .head_line {
+      height: 0.0533333333rem;
+      display: block;
+      width: 0.88rem;
+      background: #3B48EE;
+      margin: 0.1866666667rem auto 0 auto; }
+
+.evaluation {
+  padding: 0.32rem 0 0.32rem 0.4rem;
+  background: #F4F6FC; }
+  .evaluation span {
+    font-size: 14px;
+    vertical-align: middle; }
+  .evaluation .evaluation-text1 {
+    color: #959FAC; }
+  .evaluation .evaluation-text2 {
+    color: #304FCD; }
+  .evaluation .right-blue-icon {
+    width: 0.2666666667rem;
+    height: 0.2666666667rem; }
+
+.risk-alltype {
+  padding: 0.32rem 0.64rem 0.8rem 0.64rem;
+  background: #fff; }
+  .risk-alltype .risk-type-img {
+    text-align: center; }
+    .risk-alltype .risk-type-img .hot-icon {
+      display: block;
+      width: 1.2rem;
+      height: 0.8533333333rem;
+      margin: 0 auto -0.2666666667rem 23%; }
+    .risk-alltype .risk-type-img .type-img-icon {
+      display: block;
+      width: 3.4666666667rem;
+      height: 1.9733333333rem;
+      margin: 0 auto; }
+    .risk-alltype .risk-type-img .type-text {
+      display: inline-block;
+      color: #485465;
+      font-size: 20px;
+      font-family: PingFangSC-Medium, sans-serif;
+      margin: 0.2666666667rem 0; }
+  .risk-alltype .left-right {
+    color: #959FAC;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.1333333333rem; }
+  .risk-alltype .progress-line {
+    position: relative;
+    margin: 0 auto; }
+    .risk-alltype .progress-line .progress_bgone {
+      height: 0.1866666667rem;
+      border: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0);
+      position: absolute;
+      width: 100%; }
+      .risk-alltype .progress-line .progress_bgone .progress_bgtwo {
+        width: 20%;
+        height: 100%;
+        float: left;
+        border-right: 1px solid #fff;
+        box-sizing: border-box; }
+    .risk-alltype .progress-line .progress_bg {
+      height: 0.1866666667rem;
+      border: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: #E6EAF0; }
+      .risk-alltype .progress-line .progress_bg .progress_bar {
+        background: linear-gradient(90deg, #1D8AFF 0%, #3B48EE 100%);
+        width: 0;
+        height: 0.2933333333rem;
+        border-radius: 1px; }
+    .risk-alltype .progress-line .progress_btn {
+      width: 0.96rem;
+      height: 0.96rem;
+      outline: none;
+      position: absolute;
+      background: url(../img/cmbtn.png) no-repeat;
+      background-size: 100% 100%;
+      left: 0;
+      margin-left: -0.4rem;
+      top: -0.5333333333rem;
+      cursor: pointer;
+      border: 0.2rem solid rgba(0, 0, 0, 0) !important;
+      box-sizing: content-box; }
+    .risk-alltype .progress-line .text {
+      position: absolute;
+      width: 0.70rem;
+      height: 0.64rem;
+      top: -0.70rem;
+      background-size: 100% 100%;
+      color: #000;
+      text-align: center;
+      font-size: 0.28rem;
+      left: -0.20rem;
+      display: none; }
+  .risk-alltype .risk-p {
+    color: #959FAC;
+    font-size: 14px;
+    margin-top: 0.4rem;
+    text-align: center; }
+
+.simulation {
+  padding: 0.4rem 0.56rem;
+  background: url("../img/simulation.png");
+  background-size: 100%;
+  margin-bottom: 0.16rem; }
+  .simulation .simulation-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4266666667rem; }
+    .simulation .simulation-flex .simulation-two {
+      text-align: center; }
+      .simulation .simulation-flex .simulation-two p {
+        color: #485465;
+        font-size: 16px;
+        margin-bottom: 0.24rem; }
+      .simulation .simulation-flex .simulation-two span {
+        font-family: Arial Black;
+        color: #304FCD;
+        font-size: 30px; }
+  .simulation .simulation-text {
+    color: #959FAC;
+    font-size: 14px;
+    text-align: center; }
+
+.annular {
+  background: #fff; }
+
+.cd {
+  background: #fff;
+  padding: 0 0.4rem 1.0666666667rem 0.4rem;
+  margin-bottom: 0.8rem; }
+  .cd .cd-box {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #E6EAF0;
+    border-top: 1px solid #E6EAF0; }
+    .cd .cd-box .cd-title {
+      display: inline-block;
+      margin-bottom: 0.4rem; }
+      .cd .cd-box .cd-title img {
+        width: 0.5866666667rem;
+        height: 0.5066666667rem; }
+      .cd .cd-box .cd-title span {
+        color: #485465;
+        font-size: 16px;
+        vertical-align: middle;
+        margin-left: 0.24rem; }
+    .cd .cd-box p {
+      color: #959FAC;
+      font-family: pingfang;
+      font-size: 14px; }
+  .cd .open-right {
+    text-align: right;
+    margin-top: 0.2666666667rem;
+    color: #959FAC;
+    font-size: 12px;
+    background: #fff; }
+    .cd .open-right img {
+      width: 0.4266666667rem;
+      height: 0.4266666667rem; }
+
+.go-buy {
+  position: fixed;
+  bottom: 0;
+  padding: 0.3733333333rem 0;
+  background: #304FCD;
+  font-size: 18px;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center; }
+
+.suspension {
+  position: fixed;
+  right: 0.2666666667rem;
+  top: 30%;
+  z-index: 9999;
+  border-radius: 0.9333333333rem;
+  background: #ffff;
+  box-shadow: 0 3px 5px #7681AC;
+  width: 2.1333333333rem;
+  height: 1.0666666667rem;
+  line-height: 1.0666666667rem;
+  text-align: center;
+  color: #2E5CC6;
+  font-size: 14px; }
+  .suspension img {
+    width: 0.5333333333rem;
+    height: 0.5333333333rem; }
+  .suspension span {
+    vertical-align: middle; }
+
+/*# sourceMappingURL=group.css.map */
