@@ -81,9 +81,8 @@ $row = meeting::getInfoById($id);
                 var people = $("#people").val();
                 var time =$("#time").val();
                 var classes = $("#classes").val();
-
-
                 var picurl = $("#pictureid").val();
+                var tel = $("#tel").val();
 
 
 
@@ -113,6 +112,11 @@ $row = meeting::getInfoById($id);
                     layer.tips('封面图片不能为空', '#upimg0');
                     return false;
                 }
+                if (tel == '') {
+                    layer.tips('联系电话不能为空', '#tel');
+                    return false;
+                }
+
                 $(this).unbind();
 
                 $.ajax({
@@ -125,7 +129,8 @@ $row = meeting::getInfoById($id);
                         id:id,
                         img:picurl,
                         time:time,
-                         classes:classes
+                        tel:tel,
+                        classes:classes
             },
                     dataType: 'json',
                     success: function (data) {
@@ -167,7 +172,10 @@ $row = meeting::getInfoById($id);
         <label><font color="#dc143c">*</font>聚会申请人</label>
         <input type="text" class="text-input input-length-30" name="people" id="people" value="<?php echo $row['people']?>"/>
     </p>
-
+    <p>
+        <label><font color="#dc143c">*</font>联系电话</label>
+        <input type="text" class="text-input input-length-30" name="tel" id="tel" value="<?php echo $row['tel']?>"/>
+    </p>
     <p>
         <label><font color="#dc143c">*</font>聚会班级</label>
         <input type="text" class="text-input input-length-30" name="classes" id="classes" value="<?php echo $row['class']?>"/>

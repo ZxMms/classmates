@@ -137,7 +137,7 @@ $stu_list=People::getList($param);
                         },
                         title : {
                             text: '毕业生数量统计',
-                            subtext: '纯属虚构',
+
                             x:'center'
                         },
                         color:['#3B48EE'],
@@ -263,7 +263,7 @@ $stu_list=People::getList($param);
                     var option2 = {
                         title : {
                             text: '毕业生数量统计',
-                            subtext: '纯属虚构',
+
                             x:'center'
                         },
                         color: ["#26DFDE", "#FFB500", "#3B48EE", "#FF5959", "#F44CFF", "#7ED321", "#FFFF00"],
@@ -389,7 +389,7 @@ $stu_list=People::getList($param);
                     var option1 = {
                         title : {
                             text: '毕业生数量统计',
-                            subtext: '纯属虚构',
+//                            subtext: '纯属虚构',
                             x:'center'
                         },
                         xAxis: {
@@ -469,7 +469,7 @@ $stu_list=People::getList($param);
                     var option2 = {
                         title : {
                             text: '毕业生数量统计',
-                            subtext: '纯属虚构',
+//                            subtext: '纯属虚构',
                             x:'center'
                         },
                         color: ["#26DFDE", "#FFB500", "#3B48EE", "#FF5959", "#F44CFF", "#7ED321", "#FFFF00"],

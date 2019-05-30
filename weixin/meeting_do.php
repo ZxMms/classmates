@@ -57,8 +57,10 @@ switch ($action) {
         $time = $_POST['time'];
         $class = safeCheck($_POST['classes'], 0);
         $img = safeCheck($_POST['img'], 0);
+        $tel = safeCheck($_POST['tel'], 0);
         $params=array();
         $params['name']=$name;
+        $params['tel']=$tel;
         $params['content']=$content;
         $params['people']=$people;
         $params['time']=strtotime($time);

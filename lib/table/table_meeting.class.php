@@ -19,7 +19,7 @@ class Table_meeting extends Table
 
         $r['addtime'] = $data['meeting_addtime'];
         $r['img'] = $data['meeting_img'];
-
+        $r['tel'] = $data['meeting_tel'];
         return $r;
     }
 
@@ -39,6 +39,7 @@ class Table_meeting extends Table
             "class"=>"string",
             "status"=>"number",
             "img"=>"string",
+            "tel"=>"string",
             "addtime"=>"number"
         );
 

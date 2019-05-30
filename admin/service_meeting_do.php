@@ -57,6 +57,8 @@ switch ($action) {
         $time = $_POST['time'];
         $class = safeCheck($_POST['classes'], 0);
         $img = safeCheck($_POST['img'], 0);
+        $tel = safeCheck($_POST['tel'], 0);
+
         $params=array();
         $params['name']=$name;
         $params['content']=$content;
@@ -64,6 +66,7 @@ switch ($action) {
         $params['time']=strtotime($time);
         $params['class']=$class;
         $params['img']=$img;
+        $params['tel']=$tel;
         $params['addtime']=time();
         $params['status']=1;
 
@@ -98,15 +101,17 @@ switch ($action) {
         $time = $_POST['time'];
         $class = safeCheck($_POST['classes'], 0);
         $img = safeCheck($_POST['img'], 0);
+        $tel = safeCheck($_POST['tel'], 0);
         $params=array();
         $params['name']=$name;
         $params['content']=$content;
         $params['img']=$img;
+        $params['tel']=$tel;
         $params['people']=$people;
         $params['time']=strtotime($time);
         $params['class']=$class;
         $params['addtime']=time();
-        $params['status']=1;
+
         try {
             $rs = meeting::update($id,$params);
             echo action_msg('成功修改', 1);

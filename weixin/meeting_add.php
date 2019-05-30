@@ -106,7 +106,10 @@ require_once ("admin_init.php");
 
                 var people = $("#people").val();
                 var time =$("#time").val();
+
                 var classes = $("#classes").val();
+
+                var tel =$("#tel").val();
 
                 var pic=$("#imgUrl").val();
                 //var contlength = $("#content").val().length;
@@ -135,6 +138,10 @@ require_once ("admin_init.php");
                     layer.tips('封面图不能为空', '#content');
                     return false;
                 }
+                if (tel == '') {
+                    layer.tips('联系方式不能为空', '#content');
+                    return false;
+                }
                 $(this).unbind();
 
                 $.ajax({
@@ -146,6 +153,7 @@ require_once ("admin_init.php");
                             people:people,
                             time:time,
                             img:pic,
+                            tel:tel,
                             classes:classes
                         },
                      dataType: 'json',
@@ -222,6 +230,14 @@ require_once ("admin_init.php");
             </div>
             <div class="weui-cell__bd">
                 <input type="text" name="" id="people" value="" placeholder="请输入您的名字" />
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <p>联系电话<span>*</span></p>
+            </div>
+            <div class="weui-cell__bd">
+                <input type="text" name="tel" id="tel" value="" placeholder="请输入您的联系方式" />
             </div>
         </div>
         <div class="weui-cell">

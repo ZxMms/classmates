@@ -87,7 +87,7 @@ require_once('admincheck.php');
 
                 var picurl =$("#pictureid").val();
 
-
+                var tel =$("#tel").val();
 
                 //var contlength = $("#content").val().length;
                 if(titlength == 0){
@@ -115,6 +115,10 @@ require_once('admincheck.php');
                     layer.tips('封面图片不能为空', '#upimg0');
                     return false;
                 }
+                if (tel == '') {
+                    layer.tips('联系电话不能为空', '#tel');
+                    return false;
+                }
                 $(this).unbind();
 
                 $.ajax({
@@ -126,7 +130,8 @@ require_once('admincheck.php');
                         people:people,
                         img:picurl,
                         time:time,
-                         classes:classes
+                        tel:tel,
+                        classes:classes
             },
                     dataType: 'json',
                     success: function (data) {
@@ -168,7 +173,10 @@ require_once('admincheck.php');
         <label><font color="#dc143c">*</font>聚会申请人</label>
         <input type="text" class="text-input input-length-30" name="people" id="people"/>
     </p>
-
+    <p>
+        <label><font color="#dc143c">*</font>联系方式</label>
+        <input type="text" class="text-input input-length-30" name="tel" id="tel"/>
+    </p>
     <p>
         <label><font color="#dc143c">*</font>聚会班级</label>
         <input type="text" class="text-input input-length-30" name="classes" id="classes"/>
@@ -197,7 +205,7 @@ require_once('admincheck.php');
         <div style="margin-top:0px;margin-left:0%">
             <span class="fileinput">
                 <input type="file" name="file" id="file" value="" />
-                <input type="file" name="file" id="file" value="" />
+
             </span>
 
             <!--<span>*图片为列表缩略图，建议图片尺寸小于300*200</span>-->
