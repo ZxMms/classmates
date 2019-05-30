@@ -5,7 +5,7 @@ require_once('admincheck.php');
 $POWERID = '1,2,3,4';//什么样的权限能访问 如role_level
 
 
-$FLAG_FIRST_LEFTNAV = 'service';
+$FLAG_FIRST_LEFTNAV = 'donate';
 
 $FLAG_SECOND_LEFTNAV = 'service_donate';
 $param=array();

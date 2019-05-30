@@ -350,6 +350,7 @@ class Table_people extends Table {
 
         $sql.=$where;
 
+//        print_r($sql);
 
         $rs=$mypdo->sqlQuery($sql);
 

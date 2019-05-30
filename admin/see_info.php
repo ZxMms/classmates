@@ -451,7 +451,10 @@ $stu_list=People::getList($param);
                     for (var key in grades) {
                         label.push(grades[key]);
                         value.push(numbers[key]);
-                        sum+=parseInt(numbers[key]);
+                        if(key==3 || key==4){
+                            sum+=parseInt(numbers[key]);
+                        }
+
                     }
                     console.log(sum);
                     console.log(label);

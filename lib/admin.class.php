@@ -439,6 +439,36 @@ class Admin {
 			die('无访问权限');
 		}
 	}
+
+    static public function myupdatePwd($adminid, $oldpwd, $newpwd)
+    {
+
+        if (empty($oldpwd)) throw new myException('旧密码不能为空', 101);
+        if (empty($newpwd)) throw new myException('新密码不能为空', 102);
+        if (ParamCheck::is_weakPwd($newpwd)) throw new myException('新密码太弱', 104);
+
+        $admin = self::getInfoById($adminid);
+
+        //验证密码是否正确
+        $oldpass = self::buildPassword($oldpwd, $admin['salt']);
+        if ($oldpass[0] != $admin['password']) {
+            throw new myException('旧密码错误', 103);
+        }
+
+        //产生新密码
+        $newpass = self::buildPassword($newpwd);
+
+        //修改密码
+        $rs = Table_admin::updatePwd($adminid, $newpass);
+        if ($rs == 1) {
+            $msg = '修改密码成功';
+
+//            Adminlog::add($msg);
+//            return action_msg($msg, 1);
+        } else {
+            throw new myException('操作失败', 444);
+        }
+    }
 }
 
 ?>

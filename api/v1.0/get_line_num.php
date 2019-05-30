@@ -14,9 +14,9 @@ try {
     $res["number"][1] = people::getCountByType(2)-0;
     $res["type"][2]="有微信号码";
     $res["number"][2] = people::getCountByType(3)-0;
-    $res["type"][3]="无联系方式";
-    $res["number"][3] = $all_acount-people::getCountByTel();
-    $res["type"][4]="有联系方式";
+    $res["type"][3]="有联系方式";
+    $res["number"][3] = $res["number"][0]+$res["number"][1]+$res["number"][2];
+    $res["type"][4]="无联系方式";
     $res["number"][4] = people::getCountByTel()-0;
 
     $data[] = $res;

@@ -51,7 +51,7 @@
             <div class="item <?php if ($FLAG_FIRST_LEFTNAV === 'service') echo "current" ?>">
                 <div class="tit">
                     <a href="javascript:void(0);">
-                        <i class="m6"></i>
+                        <i class="m4"></i>
                         <h4>校友综合服务</h4>
                     </a>
                 </div>
@@ -93,7 +93,7 @@
             <div class="item <?php if ($FLAG_FIRST_LEFTNAV === 'donate') echo "current" ?>">
                 <div class="tit">
                     <a href="javascript:void(0);">
-                        <i class="m6"></i>
+                        <i class="m3"></i>
                         <h4>校友捐赠</h4>
                     </a>
                 </div>
