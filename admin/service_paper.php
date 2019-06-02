@@ -124,9 +124,11 @@ $stu_list=paper::getList($param);
             <!----内容区域--->
             <div class="page_body">
                 <div class="pageSearch">
+                    <?php if($_SESSION[$session_GID]!=1){?>
                     <div class="form-inline">
                         <button  type="button" id="add" class="btn btn-primary">添加 </button>
                     </div>
+                    <?php }?>
                     <table class="table table-bordered form_table set_margin">
                         <thead>
                         <tr>
@@ -135,7 +137,9 @@ $stu_list=paper::getList($param);
 
                             <th>图片展示</th>
                             <th>发布时间</th>
+                            <?php if($_SESSION[$session_GID]!=1){?>
                             <th>操作</th>
+                            <?php }?>
                         </tr>
                         </thead>
 
@@ -154,13 +158,15 @@ $stu_list=paper::getList($param);
                                 }
 
                                 echo '</td>
-							        <td>' . date('Y-m-d H:i',$item['addtime']) . '</td>
-									<td>
+							        <td>' . date('Y-m-d H:i',$item['addtime']) . '</td>';
+							        if($_SESSION[$session_GID]!=1){
+									echo '<td>
 									<a class="editinfo" href="javascript:void(0)">修改</a>
                                     <a class="delete" href="javascript:void(0)">删除</a>
                                     <input type="hidden" id="aid" value="'.$item['id'].'"/>
-                            </td>
-								</tr>';
+                                     </td>';
+                                     }
+								echo '</tr>';
                                 $i++;
 
                             }

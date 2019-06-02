@@ -56,12 +56,12 @@ class Admin {
 			$this->id         = $admininfo['id'];
 			$this->account    = $admininfo['account'];
 			$this->gid        = $admininfo['group'];
-
+//            $group=$admininfo['group'];
 			//设置cookie;
 			if($cookie) $this->buildCookie();
 
 			//设置session
-			self::setSession(1, $this->id);
+			self::setSession(1, $this->id,$this->gid);
 
 			//记录登陆信息
 			$this->updateLoginInfo();
@@ -112,14 +112,16 @@ class Admin {
 	 * @param $type  1--记录Session  2--清除记录
 	 * @return void
 	 */
-	static private function setSession($type, $id = 0){
+	static private function setSession($type, $id = 0,$gid=0){
 		global $session_ADMINID;
-		
+        global $session_GID;
 		if($type == 1){
 			if(empty($id))throw new MyException('ID不能为空', 101);
 			$_SESSION[$session_ADMINID]    = $id;
+            $_SESSION[$session_GID]    = $gid;
 		}else{
 			$_SESSION[$session_ADMINID]    = 0;
+            $_SESSION[$session_GID]    = 0;
 		}
 	}
 	

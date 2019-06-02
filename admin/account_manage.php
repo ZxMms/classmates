@@ -16,7 +16,7 @@ $keyword="";
 if(isset($_GET['keyword'])){
     $keyword=$_GET['keyword'];
 }
-$shownum  = 2;
+$shownum  = 10;
 
 
 $total_count=admin::getCount($group,$keyword);

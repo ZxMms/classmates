@@ -182,9 +182,11 @@ $stu_list=meeting::getList($param);
             <!----内容区域--->
             <div class="page_body">
                 <div class="pageSearch">
+                    <?php if($_SESSION[$session_GID]!=1){?>
                     <div class="form-inline">
                         <button  type="button" id="add" class="btn btn-primary">添加 </button>
                     </div>
+                    <?php }?>
                     <table class="table table-bordered form_table set_margin">
                         <thead>
                         <tr>
@@ -193,7 +195,9 @@ $stu_list=meeting::getList($param);
                             <th>申请人</th>
                             <th>班级</th>
                             <th>申请时间</th>
+                            <?php if($_SESSION[$session_GID]!=1){?>
                             <th>操作</th>
+                            <?php }?>
                         </tr>
                         </thead>
 
@@ -208,19 +212,21 @@ $stu_list=meeting::getList($param);
 									<td>' . $item['name'] . '</td>						
 									<td>' . $item['people'] . '</td>	
 									<td>' . $item['class'] . '</td>		
-							        <td>' . date('Y-m-d H:i',$item['time']) . '</td>
-									<td>';
-                                    if($item['status']==1){
-                                        echo ' <a class="publishinfo" href="javascript:void(0)">通过申请</a>';
-                                    }else{
-                                        echo ' <a class="nopublishinfo" href="javascript:void(0)">取消申请</a>';
-                                    }
-									echo '
+							        <td>' . date('Y-m-d H:i',$item['time']) . '</td>';
+                                    if($_SESSION[$session_GID]!=1) {
+                                        echo '<td>';
+                                        if ($item['status'] == 1) {
+                                            echo ' <a class="publishinfo" href="javascript:void(0)">通过申请</a>';
+                                        } else {
+                                            echo ' <a class="nopublishinfo" href="javascript:void(0)">取消申请</a>';
+                                        }
+                                        echo '
 									<a class="editinfo" href="javascript:void(0)">修改</a>
                                     <a class="delete" href="javascript:void(0)">删除</a>
-                                    <input type="hidden" id="aid" value="'.$item['id'].'"/>
-                            </td>
-								</tr>';
+                                    <input type="hidden" id="aid" value="' . $item['id'] . '"/>
+                                </td>';
+                                    }
+								echo '</tr>';
                                 $i++;
 
                             }

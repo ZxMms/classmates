@@ -323,11 +323,21 @@ $stu_list=People::getList($param);
                             }
                             ?>
                         </select>
+                         <?php if($_SESSION[$session_GID]!=1){?>
                             <button  type="button" id="add" class="btn btn-primary" style="float:right">添加 </button>
+                            <?php }?>
+                            <?php if($_SESSION[$session_GID]!=1){?>
                             <button type="button" id="search" class="btn btn-primary" style="float:right">查询</button>
+                             <?php }?>
+                            <?php if($_SESSION[$session_GID]!=1){?>
                             <button  type="button" id="add_data" class="btn btn-primary" style="float:right">导入信息</button>
+                            <?php }?>
+                            <?php if($_SESSION[$session_GID]!=1){?>
                             <button  type="button" id="export" class="btn btn-primary" style="float:right">导出信息</button>
+                            <?php }?>
+                            <?php if($_SESSION[$session_GID]!=1){?>
                             <button  type="button" id="del_data" class="btn btn-primary" style="float:right">删除</button>
+                            <?php }?>
                         </div>
                     </div>
                 <table class="table table-bordered form_table set_margin">
@@ -341,7 +351,9 @@ $stu_list=People::getList($param);
                         <th>班级</th>
                         <th>公司</th>
                         <th>职称</th>
+                        <?php if($_SESSION[$session_GID]!=1){?>
                         <th>操作</th>
+                        <?php }?>
                     </tr>
                     </thead>
 
@@ -362,13 +374,15 @@ $stu_list=People::getList($param);
 									<td>' . $item['major'] . '</td>
 									<td>' .  $item['class'] . '</td>
 							        <td>' . $item['company'] . '</td>
-									<td>' .  $item['job'] . '</td>
-									<td>
+									<td>' .  $item['job'] . '</td>';
+									 if($_SESSION[$session_GID]!=1){
+									echo '<td>
 										<a onclick="view_account(' . $item['id'] . ')" class="table_link" href="#">查看</a>
 										<a onclick="edit_account(' . $item['id'] . ')" class="table_link" href="#">修改</a>			
 										<a onclick="del_account(' . $item['id'] . ')" class="table_dange" href="#">删除</a>
-									</td>
-								</tr>';
+									</td>';
+									  }
+								echo '</tr>';
                             $i++;
 
                         }

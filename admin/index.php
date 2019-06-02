@@ -16,6 +16,7 @@ $POWERID = '1,2,3,4';//权限
 $FLAG_FIRST_LEFTNAV = 'index';
 //$FLAG_SECOND_LEFTNAV='';
 
+
 ?>
 
 <!DOCTYPE html>

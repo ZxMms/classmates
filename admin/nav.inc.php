@@ -13,7 +13,7 @@
                     </a>
                 </div>
             </div>
-
+            <?php if($_SESSION[$session_GID]==3){?>
             <div class="item <?php if ($FLAG_FIRST_LEFTNAV === 'accout') echo "current" ?>">
                 <div class="tit">
                     <a href="account_manage.php">
@@ -23,7 +23,7 @@
                 </div>
 
             </div>
-
+            <?php }?>
             <div class="item <?php if ($FLAG_FIRST_LEFTNAV === 'classmates') echo "current" ?>">
                 <div class="tit">
                     <a href="javascript:void(0);">
